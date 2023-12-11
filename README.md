@@ -17,10 +17,15 @@ _**[Susan Liang](https://liangsusan-git.github.io/), [Chao Huang](https://wikich
 
 ### RWAVS Dataset
 We provide the Real-World Audio-Visual Scene (RWAVS) Dataset.
-
 1. The dataset can be downloaded from the Hugging Face repository: https://huggingface.co/datasets/susanliang/RWAVS.
 
-2. The data is organized with the following directory structure.
+2. After you download the dataset, you can decompress the `RWAVS_Release.zip`.
+    ```
+    unzip RWAVS_Release.zip
+    cd release/
+    ```
+
+3. The data is organized with the following directory structure.
     ```
     ./release/
     ├── 1
