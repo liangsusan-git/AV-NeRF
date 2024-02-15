@@ -60,13 +60,20 @@ We provide the Real-World Audio-Visual Scene (RWAVS) Dataset.
 
     Please note that some frames may not have corresponding camera poses because COLMAP fails to estimate the camera parameters of these frames.
 
-    We will provide an example Dataset class to parse and load these multi-modal data.
+### Training & Evaluation
+After downloading the dataset, please modify the `DATA_DIR` and `LOG_DIR` variables in the `run.sh` file. `DATA_DIR` should point to the path where you saved the dataset, and `LOG_DIR` will be used to store all checkpoints as well as results.
 
-### Code (Coming Soon)
-1. Dataset
-2. V-NeRF
-3. A-NeRF
-4. Misc
+Then, you can train and evaluate the model by running:
+```
+bash run.sh
+```
+The `run.sh` contains both training and evaluation commands. During training, the script traverses all 13 scenes. Once the training has finished, the program will print the evaluation results for all environments and the overall performance.
+
+### V-NeRF
+We utilize the nerfacto model provided by `nerf-studio` as the V-NeRF. Please refer to [nerfstudio installation](https://docs.nerf.studio/quickstart/installation.html) for detailed guidance on installing `nerfstudio` and `tiny-cuda-nn`. You can train a NeRF for a given environment by running:
+```
+ns-train nerfacto --output-dir xxx --data xxx --max-num-iterations 100000 --viewer.quit-on-train-completion True
+```
 
 ### Citation
 ```bib
